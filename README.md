@@ -1,4 +1,4 @@
-# Spin-ball
+# <h1 align="center">Spin-ball</h1>
 
 ## Tech-Stack :-
    1. React
