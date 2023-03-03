@@ -1,13 +1,22 @@
 import Phaser from "phaser";
 
+import WebFontFile from "./webFontFile";
+
 export default class Game extends Phaser.Scene {
   init() {
     this.paddleRightVelocity = new Phaser.Math.Vector2(0, 0);
+    this.leftScore = 0;
+    this.rightScore = 0;
   }
 
-  preload() {}
+  preload() {
+    const fonts = new WebFontFile(this.load, "Press Start 2P");
+    this.load.addFile(fonts);
+  }
 
   create() {
+    this.physics.world.setBounds(-100, 0, 1000, 460);
+
     // for creating ball (x position, y position , width, height, color, )
     this.ball = this.add.circle(400, 250, 10, 0xfffff, 1);
 
@@ -34,10 +43,20 @@ export default class Game extends Phaser.Scene {
     this.physics.add.collider(this.paddleRight, this.ball);
 
     // for setting up the velocity
-    this.ball.body.setVelocity(
-      Phaser.Math.Between(-200, 200),
-      Phaser.Math.Between(-200, 200)
-    );
+    this.resetball();
+
+    const textStyle = {
+      fontSize: 48,
+      color: "red",
+      fontFamily: '"Press Start 2P"',
+    };
+
+    this.leftScoreLabel = this.add
+      .text(300, 125, "0", textStyle)
+      .setOrigin(0.5, 0.5);
+    this.rightScoreLabel = this.add
+      .text(480, 295, "0", textStyle)
+      .setOrigin(0.5, 0.5);
 
     /**
      * @type {Phaser.Physics.Arcade.Body}
@@ -89,5 +108,44 @@ export default class Game extends Phaser.Scene {
 
     this.paddleRight.y += this.paddleRightVelocity.y;
     this.paddleRight.body.updateFromGameObject();
+
+    if (this.ball.x < -30) {
+      // scored on the left side
+      this.resetball();
+      this.increamentLeftScore();
+    } else if (this.ball.x > 880) {
+      // scored on the right side
+      this.resetball();
+      this.increamentRightScore();
+    }
+  }
+
+  increamentLeftScore() {
+    if (this.leftScore === 2) {
+      this.leftScoreLabel.text = "You Lose";
+      this.leftScore = 0;
+      localStorage.setItem(
+        "lose",
+        Number(localStorage.getItem("lose") || 0) + 1
+      );
+      setInterval(() => {
+        window.location.reload();
+      }, 2000);
+    } else {
+      this.leftScore += 1;
+      this.leftScoreLabel.text = this.leftScore.toString();
+    }
+  }
+
+  increamentRightScore() {
+    this.rightScore += 1;
+    this.rightScoreLabel.text = this.rightScore.toString();
+  }
+
+  resetball() {
+    this.ball.setPosition(400, 250);
+    const angle = Phaser.Math.Between(0, 360);
+    const vec = this.physics.velocityFromAngle(angle, 200);
+    this.ball.body.setVelocity(vec.x, vec.y);
   }
 }
