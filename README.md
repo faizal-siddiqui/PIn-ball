@@ -1,5 +1,5 @@
 # Spin-ball
-### Project Members :-
+## Project Members :-
   1. Faizal Siddiqui
   2. Mitali Sinha
   3. Rajesh Ranjan Sharma
