@@ -4,6 +4,8 @@
    1. React
    2. TypeScript
    3. JavaScript
+   4. HTML
+   5. css
 
 ### Libraries Used :-  
 
