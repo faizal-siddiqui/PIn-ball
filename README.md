@@ -1,4 +1,13 @@
 # Spin-ball
+
+## Tech-Star :-
+
+## Libraries Used :-  
+
+## Available functions :-
+
+## Rule of the Game :-
+
 ### Project Members :-
   1. Faizal Siddiqui
   2. Mitali Sinha
