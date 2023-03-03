@@ -1,6 +1,6 @@
 # Spin-ball
 
-### Tech-Sta :-
+### Tech-Stack :-
 
 ### Libraries Used :-  
 
