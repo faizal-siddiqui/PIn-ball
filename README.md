@@ -14,13 +14,15 @@
           icons to app as a component, So they're easier to work with, and it lets
           us style them so they're consistent with the overall style of the app.
   #### 2. Phaser 
-            Phaser is a fun, free and fast 2D game framework for making HTML5 games for desktop and mobile web browsers.   
+            Phaser is a fun, free and fast 2D game framework for making HTML5 games
+            for desktop and mobile web browsers.   
  ### Backend Libraries
   #### 1. express
-            js, or simply Express, is a back-end web application framework for building RESTful APIs with Node. 
+            js, or simply Express, is a back-end web application framework for building RESTful 
+            APIs with Node. 
   #### 2. Mongoose
-            Mongoose allows users to conveniently create and manage data in MongoDB. While it is possible to 
-            manage data, define schemas, etc.  
+            Mongoose allows users to conveniently create and manage data in MongoDB. While 
+            it is possible to manage data, define schemas, etc.  
             
 ## Available functions :-
   1. Sign-up
