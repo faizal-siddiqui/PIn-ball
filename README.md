@@ -1,12 +1,12 @@
 # Spin-ball
 
-## Tech-Star :-
+### Tech-Star :-
 
-## Libraries Used :-  
+### Libraries Used :-  
 
-## Available functions :-
+### Available functions :-
 
-## Rule of the Game :-
+### Rule of the Game :-
 
 ### Project Members :-
   1. Faizal Siddiqui
