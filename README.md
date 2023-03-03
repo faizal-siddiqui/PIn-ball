@@ -23,6 +23,10 @@
             manage data, define schemas, etc.  
             
 ## Available functions :-
+  1. Sign-up
+  2. login
+  3. score-dashboard
+  4. animated viewport
 
 ## Rule of the Game :-
 
