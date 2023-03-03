@@ -1,6 +1,9 @@
 # Spin-ball
 
 ### Tech-Stack :-
+   1. React
+   2. TypeScript
+   3. JavaScript
 
 ### Libraries Used :-  
 
