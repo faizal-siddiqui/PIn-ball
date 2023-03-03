@@ -1,6 +1,5 @@
 import Phaser from "phaser";
 import Game from "./scenes/GameScene";
-import TitleScreen from "./scenes/TitleScreen";
 
 const config = {
   width: 850,
@@ -25,7 +24,7 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload() {
-  this.load.image("sky", "./test.avif");
+  this.load.image("sky", "./crop.png");
   // let image = this.add.image(
   //   this.cameras.main.width / 2,
   //   this.cameras.main.height / 2,
