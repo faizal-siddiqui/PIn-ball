@@ -24,7 +24,7 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload() {
-  this.load.image("sky", "./crop.png");
+  this.load.image("sky", "./combined.png");
   // let image = this.add.image(
   //   this.cameras.main.width / 2,
   //   this.cameras.main.height / 2,

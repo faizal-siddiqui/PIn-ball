@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import "./main";
+import { SiStartrek } from "react-icons/si"
 
 function App() {
   const [flag, setFlag] = useState(false); //* true -> background otherwise game
@@ -11,9 +11,10 @@ function App() {
   }, []);
 
   console.log(flag);
+
   return (
     <div className="App">
-      <h1>wellcome to the world of Spin Ball</h1>
+      <h1>Hello World</h1>
       {flag ? (
         <div
           style={{
@@ -22,19 +23,28 @@ function App() {
             position: "absolute",
             left: "0px",
             background: "url(./background.jpg)",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center"
           }}
         >
           <button
             style={{
               padding: "20px 75px 20px 75px",
+              fontSize: "50px",
               position: "absolute",
               left: "320px",
               top: "200px",
-              backgroundColor: "peachpuff",
+              backgroundColor: "teal",
+              color: "#00e6aa",
+              border: "none",
+              borderRadius: "12px",
+              backgroundImage: "linear-gradient(red, green)",
+
             }}
             onClick={() => setFlag(!flag)}
           >
-            {flag ? "Start" : "Stop"}
+            {flag ? <SiStartrek /> : "Stop"}
           </button>
           {/* {games} */}
         </div>
