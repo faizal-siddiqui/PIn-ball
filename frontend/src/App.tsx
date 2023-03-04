@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import "./main";
 import { SiStartrek } from "react-icons/si"
+// import LeaderBoard from "./components/LeaderBoard";
 
 function App() {
   const [flag, setFlag] = useState(false); //* true -> background otherwise game
@@ -83,9 +84,12 @@ function App() {
           height: "500px",
           position: "absolute",
           left: "900px",
+          backgroundColor:"white",
+          padding:"20px"
         }}
       >
-        {/* {games} */}
+        {/* <LeaderBoard/> */}
+        
       </div>
     </div>
   );
