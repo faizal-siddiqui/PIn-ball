@@ -54,7 +54,8 @@ const LeaderBoard = () => {
   const [login, setLogin] = useState<boolean>(false);
   const [register, setRegister] = useState<boolean>(false);
   const [users, setUser] = useState<userstype[]>();
-  const [wins, setWins] = useState<number>(0);
+  let w=localStorage.getItem("win")||1;
+  const [wins, setWins] = useState<number>(+w);
 
   const getdata = async () => {
     let res = await axios({
@@ -71,11 +72,11 @@ const LeaderBoard = () => {
   let x: any;
   const winns = () => {
     x = setInterval(() => {
-      const localwins = localStorage.getItem("wins");
+      const localwins = localStorage.getItem("win");
       if (localwins) {
         setWins(+localwins);
       }
-    },10000);
+    }, 10000);
   };
 
   useEffect(() => {
@@ -115,15 +116,22 @@ const LeaderBoard = () => {
           <Text fontSize="30px" mt="10px">
             {wins}
           </Text>
-          <Text>Please login to post</Text>
-          <HStack mt="20px" justifyContent="center" gap="20px">
-            <Button color="black" onClick={() => setLogin(true)}>
-              login
-            </Button>
-            <Button color="black" onClick={() => setRegister(true)}>
-              register
-            </Button>
-          </HStack>
+
+          {localStorage.getItem("token") ? (
+            ""
+          ) : (
+            <>
+              {" "}
+              <HStack mt="20px" justifyContent="center" gap="20px">
+                <Button color="black" onClick={() => setLogin(true)}>
+                  login
+                </Button>
+                <Button color="black" onClick={() => setRegister(true)}>
+                  register
+                </Button>
+              </HStack>
+            </>
+          )}
         </div>
       )}
     </>
