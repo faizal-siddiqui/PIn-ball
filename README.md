@@ -11,9 +11,9 @@
 ## Libraries Used :-  
  ### Frontend Libraries
   #### 1. React-icons 
-         <p margin-left:30px> React-icons is a small library that helps to add icons to React apps. It delivers the 
+           React-icons is a small library that helps to add icons to React apps. It delivers the 
           icons to app as a component, So they're easier to work with, and it lets
-          us style them so they're consistent with the overall style of the app.</p>
+          us style them so they're consistent with the overall style of the app.
   #### 2. Phaser 
             Phaser is a fun, free and fast 2D game framework for making HTML5 games
             for desktop and mobile web browsers.   
