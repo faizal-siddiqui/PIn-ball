@@ -26,9 +26,13 @@ const Login = ({ setLogin }: login) => {
       data: details,
     });
 
+    if(res.data.token){
+      setLogin(false);
+    }
+
     localStorage.setItem("token",res.data.token);
 
-    console.log(res);
+    console.log(res.data.token);
   };
   return (
     <VStack
@@ -53,7 +57,7 @@ const Login = ({ setLogin }: login) => {
         placeholder="password"
         textAlign={"left"}
         required
-        name="passsword"
+        name="password"
         onChange={hanldeChange}
       />
       <Button
