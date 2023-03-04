@@ -13,7 +13,7 @@ function App() {
   console.log(flag);
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <h1>wellcome to the world of Spin Ball</h1>
       {flag ? (
         <div
           style={{
