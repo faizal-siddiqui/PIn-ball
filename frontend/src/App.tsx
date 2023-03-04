@@ -3,6 +3,8 @@ import "./App.css";
 
 import "./main";
 import { SiStartrek } from "react-icons/si"
+import { Heading } from "@chakra-ui/react";
+import LeaderBoard from "./components/LeaderBoard";
 // import LeaderBoard from "./components/LeaderBoard";
 
 function App() {
@@ -16,7 +18,19 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <div
+        style={{
+          position: "absolute",
+          height: "100vh",
+          zIndex: "-1",
+          width: "100%",
+          top: "-100px",
+          backgroundColor: "#D9AFD9",
+          backgroundImage: "linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%)",
+        }}
+      >
+        <Heading>WELCOME TO THE GAME : PIN BALL</Heading>
+      </div>
       {flag ? (
         <div
           style={{
@@ -27,7 +41,7 @@ function App() {
             background: "url(./background.jpg)",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            backgroundPosition: "center"
+            backgroundPosition: "center",
           }}
         >
           <button
@@ -42,7 +56,6 @@ function App() {
               border: "none",
               borderRadius: "12px",
               backgroundImage: "linear-gradient(red, green)",
-
             }}
             onClick={() => setFlag(!flag)}
           >
@@ -69,17 +82,22 @@ function App() {
 
       <div
         style={{
-          border: "4px solid red",
+          // border: "4px solid red",
           width: "25%",
           height: "500px",
           position: "absolute",
           left: "900px",
-          backgroundColor:"white",
-          padding:"20px"
+          // backgroundColor: "black",
+          padding: "20px",
+          // width: "25%",
+          // height: "500px",
+          // margin: "auto",
+          // marginTop: "50px",
+          // padding: "20px",
+          backgroundImage: "linear-gradient(#780206, #061161)",
         }}
       >
-        {/* <LeaderBoard/> */}
-        
+        <LeaderBoard />
       </div>
     </div>
   );
