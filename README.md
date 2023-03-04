@@ -26,10 +26,15 @@
             
 ## Available functions :-
   1. Sign-up
-      <img src="./frontend/src/images/login.png"/>
+      <img src="./frontend/src/images/register.png"/>
   2. login
+      <img src="./frontend/src/images/login.png"/>
   3. score-dashboard
-  4. animated viewport
+      <img src="./frontend/src/images/leaderboard.png"/>
+  4. game viewport
+      <img src="./frontend/src/images/gameUI.png"/>
+  5. game page    
+      <img src="./frontend/src/images/gamepage.png"/>
 
 ## Rule of the Game :-
  
