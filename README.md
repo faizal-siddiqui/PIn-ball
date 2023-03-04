@@ -2,11 +2,16 @@
  <p align="center"> play live :- https://ballpaddlegame.netlify.app/</p>
 
 ## Tech-Stack :-
-   1. React                          2. TypeScript
-   3. JavaScript                     4. HTML
-   5. css                            6. Phaser
-   7. Chakra-UI                      8. Chakra-react 
-   9. mongoDB                        10. express
+   1. React      
+   2.TypeScript                    
+   3. JavaScript    
+   4. HTML                 
+   5. css       
+   6. Phaser                     
+   7. Chakra-UI  
+   8. Chakra-react                     
+   9. mongoDB         
+   10. express               
 
 ## Libraries Used :-  
  ### Frontend Libraries
