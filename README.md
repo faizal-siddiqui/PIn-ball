@@ -1,5 +1,5 @@
 # <h1 align="center">Pin-ball</h1>
-# <p align="center"> play live :- https://ballpaddlegame.netlify.app/</p>
+ <p align="center"> play live :- https://ballpaddlegame.netlify.app/</p>
 
 ## Tech-Stack :-
    1. React
