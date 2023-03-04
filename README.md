@@ -7,6 +7,11 @@
    3. JavaScript
    4. HTML
    5. css
+   6. Phaser
+   7. Chakra-UI
+   8. Chakra-react
+   9. mongoDB
+   10. express
 
 ## Libraries Used :-  
  ### Frontend Libraries
