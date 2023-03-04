@@ -26,12 +26,13 @@
             
 ## Available functions :-
   1. Sign-up
+      <img src="./frontend/src/images/login.png"/>
   2. login
   3. score-dashboard
   4. animated viewport
 
 ## Rule of the Game :-
-
+ 
 ## Project Members :-
   1. Faizal Siddiqui
   2. Mitali Sinha
