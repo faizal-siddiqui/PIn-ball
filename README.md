@@ -3,7 +3,7 @@
 
 ## Tech-Stack :-
    1. React      
-   2.TypeScript                    
+   2. TypeScript                    
    3. JavaScript    
    4. HTML                 
    5. css       
