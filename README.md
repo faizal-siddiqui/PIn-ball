@@ -1,4 +1,5 @@
-# <h1 align="center">Spin-ball</h1>
+# <h1 align="center">Pin-ball</h1>
+# <p align="center"> play live :- https://ballpaddlegame.netlify.app/</p>
 
 ## Tech-Stack :-
    1. React
@@ -37,6 +38,11 @@
       <img src="./frontend/src/images/gamepage.png"/>
 
 ## Rule of the Game :-
+  1. Register first, for without registering you would not be able to see your score to leaderboard.
+  2. Stop the ball from colliding the ball from boundry wall.
+  3. If you are not able to do this three times you will lose.
+  4. If the system at the right side lose three times before you, you will lose.
+  5. After every win the level will increase and the speed of the pin-ball will increase.
  
 ## Project Members :-
   1. Faizal Siddiqui
