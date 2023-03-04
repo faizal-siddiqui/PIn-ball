@@ -7,6 +7,8 @@ export default class Game extends Phaser.Scene {
     this.paddleRightVelocity = new Phaser.Math.Vector2(0, 0);
     this.leftScore = 0;
     this.rightScore = 0;
+    this.level = 1;
+    this.speed = 700;
   }
 
   preload() {
@@ -39,29 +41,39 @@ export default class Game extends Phaser.Scene {
 
     // for enabling collision between paddle left and ball
     this.physics.add.collider(this.paddleLeft, this.ball);
-    // for enabling collision between paddle left and ball
+    // for enabling collision between paddle right and ball
     this.physics.add.collider(this.paddleRight, this.ball);
 
     // for setting up the velocity
     this.resetball();
 
+    // for styling the score text
     const textStyle = {
       fontSize: 48,
       color: "red",
       fontFamily: '"Press Start 2P"',
     };
 
+    // score label for left
     this.leftScoreLabel = this.add
       .text(300, 125, "0", textStyle)
       .setOrigin(0.5, 0.5);
+
+    // score label for right
     this.rightScoreLabel = this.add
-      .text(480, 295, "0", textStyle)
+      .text(550, 125, "0", { ...textStyle, color: "green" })
+      .setOrigin(0.5, 0.5);
+
+    // score label for level
+    this.levelLabel = this.add
+      .text(400, 30, `Level 1`, { ...textStyle, fontSize: 28, color: "white" })
       .setOrigin(0.5, 0.5);
 
     /**
      * @type {Phaser.Physics.Arcade.Body}
      */
 
+    // creating cursors
     this.cursors = this.input.keyboard.createCursorKeys();
   }
 
@@ -120,14 +132,18 @@ export default class Game extends Phaser.Scene {
     }
   }
 
+  // increament the left player score
   increamentLeftScore() {
+    //* if the score becomes 2 then show lose and the lose count in local storage
     if (this.leftScore === 2) {
       this.leftScoreLabel.text = "You Lose";
       this.leftScore = 0;
       localStorage.setItem(
-        "lose",
-        Number(localStorage.getItem("lose") || 0) + 1
+        "lost",
+        Number(localStorage.getItem("lost") || 0) + 1
       );
+
+      this.storeData({ lost: 1 });
       setInterval(() => {
         window.location.reload();
       }, 2000);
@@ -137,15 +153,64 @@ export default class Game extends Phaser.Scene {
     }
   }
 
+  // increament the right player score
   increamentRightScore() {
-    this.rightScore += 1;
-    this.rightScoreLabel.text = this.rightScore.toString();
+    if (this.rightScore === 2) {
+      //* show you win
+      this.rightScoreLabel.text = "You Win";
+      this.rightScore = 0;
+      this.leftScore = 0;
+
+      //* Reset the score i.e the value of the left Score
+      setInterval(() => {
+        this.rightScoreLabel.text = this.rightScore.toString();
+        this.leftScoreLabel.text = this.leftScore.toString();
+      }, 1000);
+      this.rightScoreLabel.text = "You Win";
+      localStorage.setItem("win", Number(localStorage.getItem("win") || 0) + 1);
+      //* increase the level as well as speed after every win
+      this.storeData({ win: 1 });
+      this.level += 1;
+      this.speed += 200;
+
+      this.storeData({ level: this.level });
+      this.increamentLevel();
+    } else {
+      this.rightScore += 1;
+      this.rightScoreLabel.text = this.rightScore.toString();
+    }
   }
 
+  //* method to increase the level
+  increamentLevel() {
+    this.levelLabel.text = `Level ${this.level.toString()}`;
+  }
+
+  //* method to reset the ball after every die
   resetball() {
     this.ball.setPosition(400, 250);
     const angle = Phaser.Math.Between(0, 360);
-    const vec = this.physics.velocityFromAngle(angle, 200);
+    const vec = this.physics.velocityFromAngle(angle, this.speed);
     this.ball.body.setVelocity(vec.x, vec.y);
+  }
+
+  //* To store the wins inside the server
+  storeData(data) {
+    // console.log("data:", data);
+    fetch(`https://crimson-ray-shoe.cyclic.app/users/update`, {
+      method: "PATCH",
+      body: JSON.stringify(data),
+      headers: {
+        tkn: localStorage.getItem("token"),
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 }
