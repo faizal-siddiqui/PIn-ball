@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import "./main";
-import { SiStartrek } from "react-icons/si"
+import { SiStartrek } from "react-icons/si";
 import { Heading } from "@chakra-ui/react";
 import LeaderBoard from "./components/LeaderBoard";
-// import LeaderBoard from "./components/LeaderBoard";
 
 function App() {
   const [flag, setFlag] = useState(false); //* true -> background otherwise game
@@ -29,7 +28,9 @@ function App() {
           backgroundImage: "linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%)",
         }}
       >
-        <Heading>WELCOME TO THE GAME : PIN BALL</Heading>
+        <Heading fontFamily={"monospace"} pt="20px">
+          WELCOME TO THE WORLD OF PINBALL GAME
+        </Heading>
       </div>
       {flag ? (
         <div
@@ -61,40 +62,20 @@ function App() {
           >
             {flag ? <SiStartrek /> : "Stop"}
           </button>
-          {/* {games} */}
         </div>
       ) : (
-        // <button
-        //   style={{
-        //     border: "4px solid red",
-        //     paddingLeft: "75px",
-        //     paddingRight: "75px",
-        //     position: "absolute",
-        //     left: "400px",
-        //     top: "250px",
-        //   }}
-        //   onClick={() => setFlag(!flag)}
-        // >
-        //   {flag ? "Start" : "Stop"}
-        // </button>
         <></>
       )}
 
       <div
         style={{
-          // border: "4px solid red",
           width: "25%",
-          height: "500px",
+          height: "460px",
           position: "absolute",
           left: "900px",
-          // backgroundColor: "black",
           padding: "20px",
-          // width: "25%",
-          // height: "500px",
-          // margin: "auto",
-          // marginTop: "50px",
-          // padding: "20px",
           backgroundImage: "linear-gradient(#780206, #061161)",
+          overflow: "auto",
         }}
       >
         <LeaderBoard />

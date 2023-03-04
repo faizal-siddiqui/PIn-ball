@@ -6,8 +6,6 @@ type login = {
   setLogin: (value: boolean) => void;
 };
 
-
-
 const Login = ({ setLogin }: login) => {
   const [details, setDetails] = useState({});
 
@@ -26,11 +24,11 @@ const Login = ({ setLogin }: login) => {
       data: details,
     });
 
-    if(res.data.token){
+    if (res.data.token) {
       setLogin(false);
     }
 
-    localStorage.setItem("token",res.data.token);
+    localStorage.setItem("token", res.data.token);
 
     console.log(res.data.token);
   };
