@@ -22,7 +22,7 @@ const Login = ({ setLogin }: login) => {
     console.log(details);
     let res = await axios({
       method: "post",
-      url: "https://crimson-ray-shoe.cyclic.app/users/login",
+      url: "http://localhost:8080/users/login",
       data: details,
     });
 
@@ -53,7 +53,7 @@ const Login = ({ setLogin }: login) => {
         placeholder="password"
         textAlign={"left"}
         required
-        name="passsword"
+        name="password"
         onChange={hanldeChange}
       />
       <Button
