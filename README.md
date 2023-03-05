@@ -50,7 +50,7 @@
   5. After every win, the level will be increased and the speed of the pin-ball will increase.
  
 ## Project Members :-
-  1. <a href="https://mira713.github.io/">Faizal Siddiqui</a>
+  1. <a href="https://github.com/faizal-siddiqui">Faizal Siddiqui</a>
   2. <a href="https://github.com/mira713">Mitali Sinha</a>
-  3. Rajesh Ranjan Sharma
-  4. Rajesh Pachika
+  3. <a href="https://github.com/Rajesh-P-07">Rajesh Ranjan Sharma</a>
+  4. <a href="https://github.com/rajeshranjan22"> Rajesh Pachika</a>
